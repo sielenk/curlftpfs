@@ -7,7 +7,7 @@ AC_PROG_CPP
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
-AC_PROG_LIBTOOL
+LT_INIT
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 PKG_CHECK_MODULES(GLIB, [glib-2.0])
@@ -26,7 +26,7 @@ AC_CHECK_FUNC([fuse_opt_parse], [have_fuse_opt_parse=yes])
 
 # Checks for header files.
 AC_HEADER_STDC
-AC_CHECK_HEADERS([fcntl.h netinet/in.h stdint.h stdlib.h string.h unistd.h])
+AC_CHECK_HEADERS([fcntl.h netinet/in.h stdint.h stdlib.h string.h unistd.h limits.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
@@ -42,7 +42,7 @@ AC_HEADER_TIME
 AC_STRUCT_TM
 #AC_TYPE_UINT32_T
 #AC_TYPE_UINT64_T
-#AC_TYPE_UINT8_T
+AC_TYPE_UINT8_T
 
 # Checks for library functions.
 AC_FUNC_CHOWN
@@ -52,7 +52,7 @@ AC_FUNC_REALLOC
 AC_FUNC_SELECT_ARGTYPES
 AC_FUNC_STRFTIME
 AC_FUNC_UTIME_NULL
-AC_CHECK_FUNCS([ftruncate getpass memmove memset mkdir realpath rmdir select strchr strdup strrchr strstr strtoull utime])
+AC_CHECK_FUNCS([ftruncate getpass memmove memset mkdir realpath rmdir select strchr strdup strerror strrchr strstr strtoull utime])
 
 # Check for iconv
 AM_ICONV

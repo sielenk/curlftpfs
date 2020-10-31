@@ -1,0 +1,12 @@
+/libtool
+/autom4te.cache
+/config.*
+/stamp-h?
+/curlftpfs
+/tests/ftpfs-ls_unittest
+.deps
+.libs
+Makefile
+*~
+*.[ao]
+*.l[ao]
