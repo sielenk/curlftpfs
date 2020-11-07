@@ -84,7 +84,7 @@ char* get_dir_path(const char* path) {
 
   ret = g_strdup_printf("%s%.*s%s",
                         ftpfs.host,
-                        lastdir - path,
+                        (int)(lastdir - path),
                         path,
                         lastdir - path ? "/" : "");
 
