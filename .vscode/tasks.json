@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Configure Debug",
+            "command": "mkdir -p debug && cd debug && ../configure CFLAGS=\"-ggdb -O0\""
+        },
+        {
+            "type": "shell",
+            "label": "Clean Debug",
+            "command": "make -C debug clean",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "Rebuild Debug",
+            "command": "make -C debug clean all check",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Build Debug",
+            "command": "make -C debug all check",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
