@@ -204,6 +204,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
+DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in AUTHORS \
 	COPYING ChangeLog INSTALL NEWS README compile config.guess \
 	config.sub depcomp install-sh ltmain.sh missing
@@ -376,11 +377,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = compat doc
-DIST_SUBDIRS = $(SUBDIRS) tests
+SUBDIRS = compat doc . tests
 AM_CPPFLAGS = -DFUSE_USE_VERSION=26
 AM_LDFLAGS = $(LIBICONV)
-curlftpfs_SOURCES = ftpfs.c
+curlftpfs_SOURCES = ftpfs.c 
 @FUSE_OPT_COMPAT_FALSE@curlftpfs_LDADD = libcurlftpfs.a
 @FUSE_OPT_COMPAT_TRUE@curlftpfs_LDADD = libcurlftpfs.a compat/libcompat.la
 noinst_LIBRARIES = libcurlftpfs.a
@@ -974,11 +974,6 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
-
-check: test
-
-test:
-	@(cd tests; $(MAKE) test)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,9 +1,7 @@
-/libtool
 /autom4te.cache
 /config.*
 /stamp-h?
-/curlftpfs
-/tests/ftpfs-ls_unittest
+/debug
 .deps
 .libs
 Makefile

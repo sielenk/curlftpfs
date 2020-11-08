@@ -13,8 +13,8 @@
 #include <string.h>
 #include <assert.h>
 
-#include "ftpfs.h"
-#include "ftpfs-ls.h"
+#include "../ftpfs.h"
+#include "../ftpfs-ls.h"
 
 struct ftpfs ftpfs;
 
